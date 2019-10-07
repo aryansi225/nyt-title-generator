@@ -25,5 +25,5 @@ LIVE DEMO HERE -> https://nyttitlegenerator.appspot.com/
 
 Flask, Tensorflow, Keras
 
-# Credit
+# References
 https://www.kaggle.com/shivamb/beginners-guide-to-text-generation-using-lstms
