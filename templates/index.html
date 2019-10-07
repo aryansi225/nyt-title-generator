@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>NY Times Title Generator</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/chomsky" type="text/css"/> 
+</head>
+<body>
+    <style>
+        body{
+            background-color: #E0E0E0;
+        }  
+    </style>
+    <div>
+        <div>
+            <div style="padding-top: 20px">
+                <center>
+                    <img src="static/images/new-york.png" alt="Logo" width="100" height="100">
+                    <br>
+                    <br>
+                    <h1>NY Times Article Title Generator</h1>
+                </center>
+            </div>
+            <form action="/result" method="POST">
+                <div style="padding-top: 30px">
+                    <center>
+                        <label>Enter seed word or phrase</label>
+                        <input required name="data" class="form-control col-lg-6" type="text" autofocus="autofocus" maxlength="100">
+                        <p style="text-align:right;padding-right: 400px"><font size="1.5">Upto 100 characters allowed</font></p>
+                        <label>Enter number of words that should be generated</label>
+                        <input required name="quantity" class="form-control col-lg-4" type="number" min="1" max="20" autofocus="autofocus">
+                        <p style="text-align:right;padding-right: 520px"><font size="1.5">Generated words can be between 1 to 20</font></p>
+                        <input align="center" class="btn btn-primary" type="submit" value="Submit">
+                    </center>
+                </div>
+            </form>
+        </div>
+        <div>
+            <div class="left" style="padding-top: 20px; padding-left: 100px; padding-right: 100px; float: left">
+                <h2>Entered word/phrase and size</h2>
+                <br>
+                {% if hasOutput %}
+                    <h3>Seed Phrase: {{seed}}</h3>
+                    <h3>Words to be generated: {{quantity}}</h3>
+                {% endif %}
+            </div>
+            <div class="right" style="padding-top: 20px; padding-right: 100px; float: right">
+                <h2 style="padding-right: 400px;">Generated title</h2>
+                <br>
+                {% if hasOutput %}
+                    <h3 style="font-family: ChomskyRegular">{{predictions}}</h3>
+                {% endif %}
+                <br>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
