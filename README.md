@@ -27,3 +27,15 @@ Flask, Tensorflow, Keras
 
 # References
 https://www.kaggle.com/shivamb/beginners-guide-to-text-generation-using-lstms
+
+# My Original Contribution & Learnings
+
+Contribution => 
+Reimplemented the code after understanding the above kaggle kernel mentioned in the reference. 
+Used the generated model in a flask application which was built so that prediction for an input can be made interactive. 
+Deployed on GCP using App Engine.
+
+Major Learnings => 
+Learnt how to use N-grams and LSTM for sequence prediction. 
+Learnt how to built Flask application and serve a saved keras model. 
+Learnt how to deploy on GCP using App Engine.
